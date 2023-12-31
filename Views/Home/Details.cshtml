@@ -1,0 +1,33 @@
+﻿@using StdMgtSystem.Models;
+@{
+    ViewBag.Title = "Student Details";
+   
+}
+
+<div class="row justify-content-center m-3">
+    <div class="col-sm-8">
+        <div class="card">
+            <div class="card-header">
+                <h1>@Model.Name</h1>
+            </div>
+
+            <div class="card-body text-center">
+                
+
+                <h4>StudentID : @Model.StudentId</h4>
+                <h4>Branch : @Model.Branch</h4>
+                <h4>Section: @Model.Section</h4>
+       
+
+            </div>
+            <div class="card-footer text-center">
+                <a asp-controller="home" asp-action="index"
+                   class="btn btn-primary">Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/CustomScript.js"></script>
+}

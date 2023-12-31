@@ -1,0 +1,28 @@
+﻿@using StdMgtSystem.Models;
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Model)
+            {
+                <tr>
+                    <td>@student.StudentId</td>
+                    <td>@student.Name</td>
+                    <td>
+                        <a asp-controller="home" asp-action="details" asp-route-id="@student.StudentId" class="btn btn-primary">View</a>
+                        <form asp-controller="home" asp-action="delete" method="post" style="display: inline;">
+                            <input type="hidden" name="id" value="@student.StudentId" />
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
